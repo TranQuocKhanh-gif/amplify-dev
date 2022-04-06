@@ -5,7 +5,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import CheckoutForm from "../components/CheckoutForm";
 
 const Checkout = () => {
-    const stripePromise = loadStripe('<stripe_public_key>');
+    const stripePromise = loadStripe('pk_test_51Kl3j8LHXZHECz08WwklQ3zW8TOeRCveAEQ45mj6xm5C0vITfZUElK5sb81ilpFfH1wsUBtlT185eNLd2TuFUU2X00fe1hHkw7');
 
     return (
         <section className="checkout-wrapper">

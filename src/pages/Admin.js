@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { v4 as uuidv4 } from 'uuid';
-import { API, graphqlOperation, Storage } from "aws-amplify";
+import { API, Storage } from "aws-amplify";
 import { AmplifyAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { createBook } from '../api/mutations'
 import config from '../aws-exports'
@@ -11,6 +11,7 @@ const {
 } = config
 
 
+
 const Admin = () => {
     const [image, setImage] = useState(null);
     const [bookDetails, setBookDetails] = useState({ title: "", description: "", image: "", author: "", price: "" });
@@ -19,7 +20,8 @@ const Admin = () => {
         e.preventDefault();
         try {
             if (!bookDetails.title || !bookDetails.price) return
-            await API.graphql(graphqlOperation(createBook, { input: bookDetails }))
+            //await API.graphql(graphqlOperation(createBook, { input: bookDetails }))
+            await API.graphql({query:createBook, variables: {input: bookDetails}, authMode: 'AMAZON_COGNITO_USER_POOLS'})
             setBookDetails({ title: "", description: "", image: "", author: "", price: "" })
         } catch (err) {
             console.log('error creating todo:', err)

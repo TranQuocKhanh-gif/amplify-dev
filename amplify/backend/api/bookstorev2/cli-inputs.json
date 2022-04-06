@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "bookstorev2",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "D:\\trainee\\mooc_project\\store\\bookstore-v2\\amplify\\backend\\api\\bookstorev2\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authbookstorev2934a2538"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2023-04-05T09:24:59.825Z",
+        "keyDescription": ""
+      }
+    ],
+    "conflictResolution": {}
+  }
+}
